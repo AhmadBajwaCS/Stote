@@ -1,7 +1,7 @@
 # Stote
 Study App
 
-https://www.notion.so/Project-Info-516a264d936440caa6497d4d09ec57f3
+# Project Info
 
 Welcome to Stote Industries. Where we take tokes and we stay dope!!!!! **🤢**
 
@@ -9,7 +9,7 @@ Welcome to Stote Industries. Where we take tokes and we stay dope!!!!! **🤢**
 
 ## Project Description
 
-We’re aiming to create a study app that can be used alongside school to aid in organization and performance. The goal is to implement features that students can use to increase their quality of life and ease of access with their schoolwork. 
+We’re aiming to create a study app that can be used alongside school to aid in organization and performance. The goal is to implement features that students can use to increase their quality of life and ease of access with their schoolwork.
 
 ## Features
 
@@ -27,3 +27,11 @@ We’re aiming to create a study app that can be used alongside school to aid in
 ## Long-Term Expansion/Goals
 
 - Social System
+- Website
+- Saving mp3 files in database
+- Add AI
+
+### Hierarchy
+
+- Page 1: Classes
+    - Page 2: Upload Documents, Voice Record, Note-taking, Flash Cards
