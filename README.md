@@ -1,5 +1,6 @@
 # Stote
 Study App
+https://www.notion.so/bdab20bf51714a89b13accd161a73f7a?v=9df97789e1c24f38bd9e6af80926acdc
 
 # Project Info
 
