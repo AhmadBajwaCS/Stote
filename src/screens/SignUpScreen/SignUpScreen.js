@@ -4,9 +4,10 @@ import Logo from '../../../assets/images/LogoCat.jpg'
 import CustomInput from '../../components/CustomInput'
 import CustomButton from '../../components/CustomButton'
 
-const SignInScreen = () => {
+const SignUpScreen = () => {
     const [username, setUsername] = useState('');
     const [password, setPassword] = useState('');
+    const [confirmPassword, setConfirmPassword] = useState('');
     const {height} = useWindowDimensions();
 
     return (
@@ -29,7 +30,12 @@ const SignInScreen = () => {
                 setValue={setPassword}
                 secureTextEntry={true}
             />
-
+           <CustomInput
+               placeholder="Confirm Password"
+               value = {confirmPassword}
+               setValue={setConfirmPassword}
+               secureTextEntry={true}
+           />
             <CustomButton
                 username = {username}
                 password = {password}
@@ -54,4 +60,4 @@ const styles = StyleSheet.create({
 
 });
 
-export default SignInScreen;
+export default SignUpScreen;

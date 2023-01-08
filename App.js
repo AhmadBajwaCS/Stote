@@ -17,8 +17,10 @@ import {
 import {
   Colors,
 } from 'react-native/Libraries/NewAppScreen';
-
+import Navigation from './src/Navigation';
 import SignInScreen from './src/screens/SignInScreen';
+//import SignUpScreen from './src/screens/SignUpScreen';
+
 
 
 const App = () => {
@@ -30,7 +32,7 @@ const App = () => {
 
   return (
     <SafeAreaView style={styles.root}>
-      <SignInScreen />
+      <Navigation />
     </SafeAreaView>
   );
 };
