@@ -19,7 +19,7 @@ import {
 } from 'react-native/Libraries/NewAppScreen';
 import Navigation from './src/Navigation';
 import SignInScreen from './src/screens/SignInScreen';
-//import SignUpScreen from './src/screens/SignUpScreen';
+import SignUpScreen from './src/screens/SignUpScreen';
 
 
 
