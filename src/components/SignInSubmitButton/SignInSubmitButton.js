@@ -2,10 +2,10 @@ import React from 'react';
 import { TouchableOpacity, View, Text, TextInput, StyleSheet} from 'react-native';
 
 
-const CustomButton = ({username, password}) => {
+const SignInSubmitButton = ({username, password}) => {
     const login = () => {
         if((username == "admin") && (password == "stote123")){
-            return alert("Alert", "YOU MAY ENTER CHILD")
+            return alert("Welcome User")
         }
     }
     return (
@@ -32,4 +32,4 @@ const styles = StyleSheet.create({
      }
 });
 
-export default CustomButton;
+export default SignInSubmitButton;

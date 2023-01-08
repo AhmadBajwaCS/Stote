@@ -2,7 +2,8 @@ import React, {useState} from 'react'
 import { View, Text, Image, StyleSheet, useWindowDimensions } from 'react-native'
 import Logo from '../../../assets/images/LogoCat.jpg'
 import CustomInput from '../../components/CustomInput'
-import CustomButton from '../../components/CustomButton'
+import SignInSubmitButton from '../../components/SignInSubmitButton'
+import SignUpRequestButton from '../../components/SignUpRequestButton'
 
 const SignInScreen = () => {
     const [username, setUsername] = useState('');
@@ -30,10 +31,12 @@ const SignInScreen = () => {
                 secureTextEntry={true}
             />
 
-            <CustomButton
+            <SignInSubmitButton
                 username = {username}
                 password = {password}
             />
+
+            <SignUpRequestButton />
 
         </View>
     );
