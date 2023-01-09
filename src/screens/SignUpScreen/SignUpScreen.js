@@ -2,7 +2,7 @@ import React, {useState} from 'react'
 import { View, Text, Image, StyleSheet, useWindowDimensions } from 'react-native'
 import Logo from '../../../assets/images/LogoCat.jpg'
 import CustomInput from '../../components/CustomInput'
-import SignInSubmitButton from '../../components/SignInSubmitButton'
+import CustomButton from '../../components/SignInSubmitButton'
 import SignUpRequestButton from '../../components/SignUpRequestButton'
 import SignUpCreateButton from '../../components/SignUpCreateButton'
 

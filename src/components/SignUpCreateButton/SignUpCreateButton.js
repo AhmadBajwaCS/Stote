@@ -28,10 +28,13 @@ const SignUpCreateButton = ({username, password, confpassword}) => {
 const styles = StyleSheet.create({
     container: {
         height: 50,
+        width: '100%',
+        borderRadius: 5,
         backgroundColor: 'green',
         justifyContent: 'center',
         alignItems: 'center',
-        margin: 10,
+        paddingHorizontal: 10,
+        marginVertical: 5,
 
     },
     loginButtonText: {
