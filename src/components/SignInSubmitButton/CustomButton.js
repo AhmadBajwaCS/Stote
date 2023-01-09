@@ -2,7 +2,7 @@ import React from 'react';
 import { TouchableOpacity, View, Text, TextInput, StyleSheet, Pressable} from 'react-native';
 
 
-const CustomButton = ({username, password, onPress, text, type="PRI"}) => {
+const CustomButton = ({username, password, onPress, text, type="PRI", bgColor, fgColor, width}) => {
     const login = () => {
         if((username == "admin") && (password == "stote123")){
             return alert("Welcome User")
@@ -18,8 +18,9 @@ const CustomButton = ({username, password, onPress, text, type="PRI"}) => {
 const styles = StyleSheet.create({
     container: {
 
-        width: '100%',
+        width: '70%',
 
+        borderRadius: 5,
         justifyContent: 'center',
         alignItems: 'center',
 
@@ -29,12 +30,20 @@ const styles = StyleSheet.create({
     },
 
     container_PRI: {
-        backgroundColor: 'green'
+        backgroundColor: '#1e6776'
     },
 
     container_TER: {
-
+        width: "75%",
+        padding: 0,
     },
+
+    container_SOC:{
+        backgroundColor: '#1e6776',
+        width: '30%',
+        marginHorizontal:20,
+    },
+
 
     text: {
         color: 'white',
