@@ -2,13 +2,21 @@ import React, {useState} from 'react'
 import { View, Text, Image, StyleSheet, useWindowDimensions } from 'react-native'
 import Logo from '../../../assets/images/LogoCat.jpg'
 import CustomInput from '../../components/CustomInput'
-import SignInSubmitButton from '../../components/SignInSubmitButton'
+import CustomButton from '../../components/SignInSubmitButton'
 import SignUpRequestButton from '../../components/SignUpRequestButton'
 
 const SignInScreen = () => {
     const [username, setUsername] = useState('');
     const [password, setPassword] = useState('');
     const {height} = useWindowDimensions();
+
+    const onSignInPressed = () => {
+        console.warn("Sign in")
+    }
+
+    const onForgotPasswordPressed = () => {
+        console.warn("Forgot Password")
+    }
 
     return (
         <View style = {styles.root}>
@@ -31,10 +39,19 @@ const SignInScreen = () => {
                 secureTextEntry={true}
             />
 
-            <SignInSubmitButton
+            <CustomButton
+                text = "Sign in"
+                onPress={onSignInPressed()}
                 username = {username}
                 password = {password}
             />
+
+            <CustomButton
+                text = "forgot password?"
+                onPress={onForgotPasswordPressed()}
+                type = "TER"
+            />
+
 
             <SignUpRequestButton />
 
@@ -53,6 +70,7 @@ const styles = StyleSheet.create({
         width: '70%',
         maxWidth: 300,
         maxHeight: 200,
+        marginVertical: 10,
     }
 
 });

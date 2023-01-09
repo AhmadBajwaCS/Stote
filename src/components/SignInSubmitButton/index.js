@@ -1,1 +1,1 @@
-export {default} from './SignInSubmitButton';
+export {default} from './CustomButton';
