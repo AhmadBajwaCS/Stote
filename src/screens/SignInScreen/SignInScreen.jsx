@@ -9,6 +9,9 @@ import SignUpRequestButton from '../../components/SignUpRequestButton'
 import { useNavigation } from '@react-navigation/native';
 import SignUpScreen from "../SignUpScreen";
 
+
+
+
 const SignInScreen = () => {
     const [username, setUsername] = useState('');
     const [password, setPassword] = useState('');
@@ -16,25 +19,25 @@ const SignInScreen = () => {
     const navigation = useNavigation();
 
     const onSignInPressed = () => {
-        console.warn("Sign in")
-    }
+        console.warn("Sign in");
+    };
 
     const onForgotPasswordPressed = () => {
-        console.warn("Forgot Password")
-    }
+        console.warn("Forgot Password");
+    };
 
     const onSignInFacebook = () => {
-        console.warn("Sign in w/ Facebook")
-    }
+        console.warn("Sign in w/ Facebook");
+    };
 
     const onSignInGoogle = () => {
-        console.warn("Sign in w/ Google")
-    }
+        console.warn("Sign in w/ Google");
+    };
 
     const onSignUpPressed = () => {
-        console.warn("Sign Up");
+        //console.warn("Sign Up");
         navigation.navigate('SignUp');
-    }
+    };
 
     return (
         <View style = {styles.root}>
@@ -61,13 +64,13 @@ const SignInScreen = () => {
 
                 <CustomButton
                     text = "forgot password?"
-                    onPress={onForgotPasswordPressed()}
+                    onPress={onForgotPasswordPressed}
                     type = "TER"
                 />
 
                 <CustomButton
                     text = "Create Account"
-                    onPress={onSignUpPressed()}
+                    onPress={onSignUpPressed}
                     type = "TER"
                 />
 
@@ -75,7 +78,7 @@ const SignInScreen = () => {
 
             <CustomButton
                 text = "Sign in"
-                onPress={onSignInPressed()}
+                onPress={onSignInPressed}
                 username = {username}
                 password = {password}
             />
@@ -87,15 +90,15 @@ const SignInScreen = () => {
             <View style={{ flexDirection: "row" ,marginLeft:"1%",justifyContent: 'space-between', }}>
                 <CustomButton
                     source = {FBLogo}
-                    onPress={onSignInPressed()}
+                    //onPress={onSignInPressed()}
                     type = "SOC"
                     bgColor = "#aec2fc"
                 />
                 <CustomButton
                     source = {GLogo}
-                    onPress={onSignInPressed()}
+                    //onPress={onSignInPressed()}
                     type = "SOC"
-                    bgColor = "#ffdfdb"
+                    bgColor = "#ffe3db"
                 />
             </View>
 
@@ -113,10 +116,6 @@ const SignInScreen = () => {
                 password = {password}
             />*/}
 
-
-            {
-                //<SignUpRequestButton />
-            }
 
         </View>
     );

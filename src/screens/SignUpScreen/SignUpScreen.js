@@ -13,6 +13,7 @@ const SignUpScreen = () => {
     const [confirmPassword, setConfirmPassword] = useState('');
     const {height} = useWindowDimensions();
     const navigation = useNavigation();
+
     const onCreateAccountPressed = () => {
 
         if(newPassword == confirmPassword){
@@ -27,45 +28,47 @@ const SignUpScreen = () => {
 
     return (
         <View style = {styles.root}>
+
+
             <Image
                 source={Logo}
                 style ={ [styles.logo, {height: height * 0.3 }] }
                 resizeMode = "contain"
             />
 
+            <Text style={{ color:"white", padding: 5, width: "100%" }}>Email:</Text>
             <CustomInput
                 placeholder="Username"
                 value = {username}
                 setValue={setUsername}
+                margVer={4}
             />
 
+            <Text style={{ color:"white", padding: 5, width: "100%" }}>New Password:</Text>
             <CustomInput
                 placeholder="Password"
                 value = {newPassword}
                 setValue={setPassword}
                 secureTextEntry={true}
+                margVer={4}
             />
-
+            <Text style={{ color:"white", padding: 5, width: "100%" }}>Confirm Password:</Text>
             <CustomInput
                 placeholder="Confirm Password"
                 value = {confirmPassword}
                 setValue={setConfirmPassword}
                 secureTextEntry={true}
+                margVer={4}
             />
 
             <CustomButton
                 text = "Sign up"
-                onPress={onCreateAccountPressed()}
+                onPress={onCreateAccountPressed}
                 username = {username}
                 password = {newPassword}
                 confpassword = {confirmPassword}
             />
 
-            <SignUpCreateButton
-                username = {username}
-                password = {newPassword}
-                confpassword = {confirmPassword}
-            />
         </View>
     );
 };
