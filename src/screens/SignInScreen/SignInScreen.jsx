@@ -9,9 +9,6 @@ import SignUpRequestButton from '../../components/SignUpRequestButton'
 import { useNavigation } from '@react-navigation/native';
 import SignUpScreen from "../SignUpScreen";
 
-
-
-
 const SignInScreen = () => {
     const [username, setUsername] = useState('');
     const [password, setPassword] = useState('');
