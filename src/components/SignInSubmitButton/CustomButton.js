@@ -10,8 +10,21 @@ const CustomButton = ({username, password, onPress, text, type="PRI", bgColor, f
     }
     if (text != null){
         return (
-            <TouchableOpacity onPress={onPress} style = {[styles.container, styles[`container_${type}`]]}>
-                <Text style={[styles.text, styles[`text_${type}`]]}>{text}</Text>
+            <TouchableOpacity onPress={onPress} style = {
+                [
+                    styles.container,
+                    styles[`container_${type}`],
+                    bgColor ? {backgroundColor: bgColor} : {},
+                ]}>
+
+                <Text style={
+                    [
+                        styles.text,
+                        styles[`text_${type}`],
+                    ]}>
+
+                    {text}
+                </Text>
             </TouchableOpacity>
         );
         }
@@ -48,14 +61,15 @@ const styles = StyleSheet.create({
     },
 
     container_SOC:{
-        backgroundColor: '#1e6776',
-        width: '20%',
+        backgroundColor: '#FFFFFF',
+        width: '15%',
+        height: '35%',
         marginHorizontal:20,
     },
 
     ImageIconStyle:{
-        width: 50,
-        height: 50,
+        width: 35,
+        height: 35,
     },
 
     text: {
