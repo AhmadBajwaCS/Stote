@@ -1,5 +1,6 @@
 import React from 'react';
-import { View, StyleSheet, TouchableOpacity } from 'react-native';
+import { View, StyleSheet, Text, Image, TouchableOpacity } from 'react-native';
+import { Border, FontSize, FontFamily, Color } from "../GlobalStyles";
 
 const Class = (props) => {
     return(
