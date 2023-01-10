@@ -8,6 +8,7 @@ import CustomButton from '../../components/SignInSubmitButton'
 import SignUpRequestButton from '../../components/SignUpRequestButton'
 import { useNavigation } from '@react-navigation/native';
 import SignUpScreen from "../SignUpScreen";
+import {LoginButton, AccessToken, GraphRequest} from 'react-native-fbsdk-next';
 
 const SignInScreen = () => {
     const [username, setUsername] = useState('');
@@ -15,26 +16,7 @@ const SignInScreen = () => {
     const {height} = useWindowDimensions();
     const navigation = useNavigation();
 
-    const onSignInPressed = () => {
-        console.warn("Sign in")
-    }
 
-    const onForgotPasswordPressed = () => {
-        console.warn("Forgot Password")
-    }
-
-    const onSignInFacebook = () => {
-        console.warn("Sign in w/ Facebook")
-    }
-
-    const onSignInGoogle = () => {
-        console.warn("Sign in w/ Google")
-    }
-
-    const onSignUpPressed = () => {
-        console.warn("Sign Up");
-        navigation.navigate('SignUp');
-    }
 
     return (
         <View style = {styles.root}>
@@ -61,13 +43,13 @@ const SignInScreen = () => {
 
                 <CustomButton
                     text = "forgot password?"
-                    onPress={onForgotPasswordPressed()}
+                    //onPress={onForgotPasswordPressed()}
                     type = "TER"
                 />
 
                 <CustomButton
                     text = "Create Account"
-                    onPress={onSignUpPressed()}
+                    //onPress={onSignUpPressed()}
                     type = "TER"
                 />
 
@@ -75,7 +57,7 @@ const SignInScreen = () => {
 
             <CustomButton
                 text = "Sign in"
-                onPress={onSignInPressed()}
+                //onPress={onSignInPressed()}
                 username = {username}
                 password = {password}
             />
@@ -87,17 +69,19 @@ const SignInScreen = () => {
             <View style={{ flexDirection: "row" ,marginLeft:"1%",justifyContent: 'space-between', }}>
                 <CustomButton
                     source = {FBLogo}
-                    onPress={onSignInPressed()}
+                    onPress = {this.onSignInFacebook}
                     type = "SOC"
                     bgColor = "#1877f2"
                 />
                 <CustomButton
                     source = {GLogo}
-                    onPress={onSignInPressed()}
+                    //onPress={onSignInPressed()}
                     type = "SOC"
                     bgColor = "#FFFFFF"
                 />
+
             </View>
+
 
             {/*<CustomButton
                 text = "Sign in with Google"

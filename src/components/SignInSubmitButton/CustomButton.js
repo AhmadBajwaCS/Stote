@@ -1,13 +1,46 @@
 import React from 'react';
 import { TouchableOpacity, View, Text, TextInput, StyleSheet, Pressable, Image} from 'react-native';
-
+import { Facebook, LoginManager, LoginButton, AccessToken, GraphRequest} from 'react-native-fbsdk';
 
 const CustomButton = ({username, password, onPress, text, type="PRI", bgColor, fgColor, width, source}) => {
     const login = () => {
+        alert("Hello");
         if((username == "admin") && (password == "stote123")){
             return alert("Welcome User")
         }
     }
+    const onSignInPressed = () => {
+            console.warn("Sign in")
+        }
+
+    const onForgotPasswordPressed = () => {
+        console.warn("Forgot Password")
+    }
+
+    const onSignInFacebook = () => {
+        LoginManager.logInWithPermissions(['public_profile', 'email']).then(
+            result => {
+              if (result.isCancelled) {
+                console.warn('Login cancelled');
+              } else {
+                console.log('Logged in!');
+              }
+            },
+            error => {
+              console.error(error);
+            }
+        );
+    };
+
+    const onSignInGoogle = () => {
+        console.warn("Sign in w/ Google")
+    }
+
+    const onSignUpPressed = () => {
+        console.warn("Sign Up");
+        navigation.navigate('SignUp');
+    }
+
     if (text != null){
         return (
             <TouchableOpacity onPress={onPress} style = {
@@ -30,7 +63,7 @@ const CustomButton = ({username, password, onPress, text, type="PRI", bgColor, f
         }
     else{
         return (
-            <TouchableOpacity onPress={onPress} style = {[styles.container, styles[`container_${type}`]]}>
+            <TouchableOpacity onPress={onSignInFacebook} style = {[styles.container, styles[`container_${type}`]]}>
                 <Image source={source} style={styles.ImageIconStyle}/>
             </TouchableOpacity>
         );
