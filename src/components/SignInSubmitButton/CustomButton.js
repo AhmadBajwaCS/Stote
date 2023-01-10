@@ -1,18 +1,27 @@
 import React from 'react';
-import { TouchableOpacity, View, Text, TextInput, StyleSheet, Pressable} from 'react-native';
+import { TouchableOpacity, View, Text, TextInput, StyleSheet, Pressable, Image} from 'react-native';
 
 
-const CustomButton = ({username, password, onPress, text, type="PRI", bgColor, fgColor, width}) => {
+const CustomButton = ({username, password, onPress, text, type="PRI", bgColor, fgColor, width, source}) => {
     const login = () => {
         if((username == "admin") && (password == "stote123")){
             return alert("Welcome User")
         }
     }
-    return (
-        <TouchableOpacity onPress={onPress} style = {[styles.container, styles[`container_${type}`]]}>
-            <Text style={[styles.text, styles[`text_${type}`]]}>{text}</Text>
-        </TouchableOpacity>
-    );
+    if (text != null){
+        return (
+            <TouchableOpacity onPress={onPress} style = {[styles.container, styles[`container_${type}`]]}>
+                <Text style={[styles.text, styles[`text_${type}`]]}>{text}</Text>
+            </TouchableOpacity>
+        );
+        }
+    else{
+        return (
+            <TouchableOpacity onPress={onPress} style = {[styles.container, styles[`container_${type}`]]}>
+                <Image source={source} style={styles.ImageIconStyle}/>
+            </TouchableOpacity>
+        );
+    }
 };
 
 const styles = StyleSheet.create({
@@ -40,10 +49,14 @@ const styles = StyleSheet.create({
 
     container_SOC:{
         backgroundColor: '#1e6776',
-        width: '30%',
+        width: '20%',
         marginHorizontal:20,
     },
 
+    ImageIconStyle:{
+        width: 50,
+        height: 50,
+    },
 
     text: {
         color: 'white',
