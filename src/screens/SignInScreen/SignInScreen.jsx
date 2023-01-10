@@ -1,13 +1,14 @@
 import React, {useState} from 'react'
 import { View, Text, Image, StyleSheet, useWindowDimensions } from 'react-native'
 import Logo from '../../../assets/images/StoteLogo.png'
-import FBLogo from '../../../assets/images/facebook.png'
+import FBLogo from '../../../assets/images/facebookLogo.png'
 import GLogo from '../../../assets/images/google.png'
 import CustomInput from '../../components/CustomInput'
-import CustomButton from '../../components/SignInSubmitButton'
+import CustomButton from '../../components/CustomButton'
 import SignUpRequestButton from '../../components/SignUpRequestButton'
 import { useNavigation } from '@react-navigation/native';
 import SignUpScreen from "../SignUpScreen";
+import { Facebook, LoginManager, LoginButton, AccessToken, GraphRequest} from 'react-native-fbsdk';
 
 const SignInScreen = () => {
     const [username, setUsername] = useState('');
@@ -16,25 +17,38 @@ const SignInScreen = () => {
     const navigation = useNavigation();
 
     const onSignInPressed = () => {
-        console.warn("Sign in")
-    }
+        console.warn("Sign in");
+    };
 
     const onForgotPasswordPressed = () => {
-        console.warn("Forgot Password")
-    }
+        console.warn("Forgot Password");
+    };
 
     const onSignInFacebook = () => {
-        console.warn("Sign in w/ Facebook")
-    }
+        console.warn("Sign in w/ Facebook");
+         LoginManager.logInWithPermissions(['public_profile', 'email']).then(
+            result => {
+              if (result.isCancelled) {
+                console.warn('Login cancelled');
+              } else {
+                console.log('Logged in!');
+              }
+            },
+            error => {
+              console.error(error);
+            }
+        );
+
+    };
 
     const onSignInGoogle = () => {
-        console.warn("Sign in w/ Google")
-    }
+        console.warn("Sign in w/ Google");
+    };
 
     const onSignUpPressed = () => {
-        console.warn("Sign Up");
+        //console.warn("Sign Up");
         navigation.navigate('SignUp');
-    }
+    };
 
     return (
         <View style = {styles.root}>
@@ -61,13 +75,13 @@ const SignInScreen = () => {
 
                 <CustomButton
                     text = "forgot password?"
-                    onPress={onForgotPasswordPressed()}
+                    onPress={onForgotPasswordPressed}
                     type = "TER"
                 />
 
                 <CustomButton
                     text = "Create Account"
-                    onPress={onSignUpPressed()}
+                    onPress={onSignUpPressed}
                     type = "TER"
                 />
 
@@ -75,7 +89,7 @@ const SignInScreen = () => {
 
             <CustomButton
                 text = "Sign in"
-                onPress={onSignInPressed()}
+                onPress={onSignInPressed}
                 username = {username}
                 password = {password}
             />
@@ -87,15 +101,15 @@ const SignInScreen = () => {
             <View style={{ flexDirection: "row" ,marginLeft:"1%",justifyContent: 'space-between', }}>
                 <CustomButton
                     source = {FBLogo}
-                    onPress={onSignInPressed()}
+                    onPress={onSignInFacebook}
                     type = "SOC"
-                    bgColor = "#1877f2"
+                    bgColor = "#aec2fc"
                 />
                 <CustomButton
                     source = {GLogo}
-                    onPress={onSignInPressed()}
+                    //onPress={onSignInPressed()}
                     type = "SOC"
-                    bgColor = "#FFFFFF"
+                    bgColor = "#ffe3db"
                 />
             </View>
 
@@ -113,10 +127,6 @@ const SignInScreen = () => {
                 password = {password}
             />*/}
 
-
-            {
-                //<SignUpRequestButton />
-            }
 
         </View>
     );

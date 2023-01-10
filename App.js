@@ -22,13 +22,10 @@ import SignInScreen from './src/screens/SignInScreen';
 import SignUpScreen from './src/screens/SignUpScreen';
 
 
+import {Facebook, LoginButton, AccessToken, GraphRequest, FacebookSdk} from 'react-native-fbsdk-next';
+import { LoginManager } from 'react-native-facebook-sdk';
 
 const App = () => {
-  const isDarkMode = useColorScheme() === 'dark';
-
-  const backgroundStyle = {
-    backgroundColor: isDarkMode ? Colors.darker : Colors.lighter,
-  };
 
   return (
     <SafeAreaView style={styles.root}>
