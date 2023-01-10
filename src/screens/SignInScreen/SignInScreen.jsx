@@ -8,6 +8,7 @@ import CustomButton from '../../components/CustomButton'
 import SignUpRequestButton from '../../components/SignUpRequestButton'
 import { useNavigation } from '@react-navigation/native';
 import SignUpScreen from "../SignUpScreen";
+import { Facebook, LoginManager, LoginButton, AccessToken, GraphRequest} from 'react-native-fbsdk';
 
 const SignInScreen = () => {
     const [username, setUsername] = useState('');
@@ -25,6 +26,19 @@ const SignInScreen = () => {
 
     const onSignInFacebook = () => {
         console.warn("Sign in w/ Facebook");
+         LoginManager.logInWithPermissions(['public_profile', 'email']).then(
+            result => {
+              if (result.isCancelled) {
+                console.warn('Login cancelled');
+              } else {
+                console.log('Logged in!');
+              }
+            },
+            error => {
+              console.error(error);
+            }
+        );
+
     };
 
     const onSignInGoogle = () => {
@@ -87,7 +101,7 @@ const SignInScreen = () => {
             <View style={{ flexDirection: "row" ,marginLeft:"1%",justifyContent: 'space-between', }}>
                 <CustomButton
                     source = {FBLogo}
-                    //onPress={onSignInPressed()}
+                    onPress={onSignInFacebook}
                     type = "SOC"
                     bgColor = "#aec2fc"
                 />
