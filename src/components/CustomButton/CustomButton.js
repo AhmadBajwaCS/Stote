@@ -2,7 +2,7 @@ import React from 'react';
 import { TouchableOpacity, View, Text, TextInput, StyleSheet, Pressable, Image} from 'react-native';
 
 
-const CustomButton = ({username, password, onPress, text, type="PRI", bgColor, fgColor, width, source}) => {
+const CustomButton = ({username, password, confpassword, onPress, text, type="PRI", bgColor, fgColor, width, source}) => {
     const login = () => {
         if((username == "admin") && (password == "stote123")){
             return alert("Welcome User")
@@ -10,15 +10,14 @@ const CustomButton = ({username, password, onPress, text, type="PRI", bgColor, f
     }
     if (text != null){
         return (
-            <TouchableOpacity onPress={onPress} style = {
-                [
+            <TouchableOpacity onPress={onPress} style = {[
                     styles.container,
                     styles[`container_${type}`],
                     bgColor ? {backgroundColor: bgColor} : {},
+
                 ]}>
 
-                <Text style={
-                    [
+                <Text style={[
                         styles.text,
                         styles[`text_${type}`],
                     ]}>
@@ -30,6 +29,7 @@ const CustomButton = ({username, password, onPress, text, type="PRI", bgColor, f
         }
     else{
         return (
+
             <TouchableOpacity onPress={onPress} style = {[styles.container, styles[`container_${type}`]]}>
                 <Image source={source} style={styles.ImageIconStyle}/>
             </TouchableOpacity>

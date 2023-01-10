@@ -4,7 +4,7 @@ import Logo from '../../../assets/images/StoteLogo.png'
 import FBLogo from '../../../assets/images/facebook.png'
 import GLogo from '../../../assets/images/google.png'
 import CustomInput from '../../components/CustomInput'
-import CustomButton from '../../components/SignInSubmitButton'
+import CustomButton from '../../components/CustomButton'
 import SignUpRequestButton from '../../components/SignUpRequestButton'
 import { useNavigation } from '@react-navigation/native';
 import SignUpScreen from "../SignUpScreen";
@@ -95,7 +95,7 @@ const SignInScreen = () => {
                     source = {GLogo}
                     onPress={onSignInPressed()}
                     type = "SOC"
-                    bgColor = "#FFFFFF"
+                    bgColor = "#512311"
                 />
             </View>
 
