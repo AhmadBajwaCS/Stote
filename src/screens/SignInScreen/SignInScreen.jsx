@@ -1,7 +1,7 @@
 import React, {useState} from 'react'
 import { View, Text, Image, StyleSheet, useWindowDimensions } from 'react-native'
 import Logo from '../../../assets/images/StoteLogo.png'
-import FBLogo from '../../../assets/images/facebook.png'
+import FBLogo from '../../../assets/images/facebookLogo.png'
 import GLogo from '../../../assets/images/google.png'
 import CustomInput from '../../components/CustomInput'
 import CustomButton from '../../components/CustomButton'
@@ -89,13 +89,13 @@ const SignInScreen = () => {
                     source = {FBLogo}
                     onPress={onSignInPressed()}
                     type = "SOC"
-                    bgColor = "#1877f2"
+                    bgColor = "#aec2fc"
                 />
                 <CustomButton
                     source = {GLogo}
                     onPress={onSignInPressed()}
                     type = "SOC"
-                    bgColor = "#512311"
+                    bgColor = "#ffdfdb"
                 />
             </View>
 

@@ -30,7 +30,11 @@ const CustomButton = ({username, password, confpassword, onPress, text, type="PR
     else{
         return (
 
-            <TouchableOpacity onPress={onPress} style = {[styles.container, styles[`container_${type}`]]}>
+            <TouchableOpacity onPress={onPress} style = {[
+                styles.container,
+                styles[`container_${type}`],
+                bgColor ? {backgroundColor: bgColor} : {},
+            ]}>
                 <Image source={source} style={styles.ImageIconStyle}/>
             </TouchableOpacity>
         );
