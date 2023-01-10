@@ -56,7 +56,8 @@ const styles = StyleSheet.create({
     },
 
     container_PRI: {
-        backgroundColor: '#1e6776'
+        backgroundColor: '#35a5c4'
+        //1e6776
     },
 
     container_TER: {
