@@ -1,6 +1,8 @@
 import React, {useState} from 'react'
 import { View, Text, Image, StyleSheet, useWindowDimensions } from 'react-native'
 import Logo from '../../../assets/images/StoteTempLogo.png'
+import FBLogo from '../../../assets/images/facebook.png'
+import GLogo from '../../../assets/images/google.png'
 import CustomInput from '../../components/CustomInput'
 import CustomButton from '../../components/SignInSubmitButton'
 import SignUpRequestButton from '../../components/SignUpRequestButton'
@@ -84,12 +86,12 @@ const SignInScreen = () => {
 
             <View style={{ flexDirection: "row" ,marginLeft:"1%",justifyContent: 'space-between', }}>
                 <CustomButton
-                    text = "Facebook"
+                    source = {FBLogo}
                     onPress={onSignInPressed()}
                     type = "SOC"
                 />
                 <CustomButton
-                    text = "Google"
+                    source = {GLogo}
                     onPress={onSignInPressed()}
                     type = "SOC"
                 />
