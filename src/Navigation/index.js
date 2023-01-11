@@ -4,6 +4,7 @@ import { NavigationContainer } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import SignInScreen from '../screens/SignInScreen';
 import SignUpScreen from '../screens/SignUpScreen';
+import Classes from '../screens/ClassesOverview';
 
 
 const Stack = createNativeStackNavigator();
@@ -15,8 +16,13 @@ const Navigation = () => {
                     //ardStyle: { backgroundColor: '#1b1c29' },
                 }}
                 >
-                  <Stack.Screen name="SignIn" component={SignInScreen} />
-                  <Stack.Screen name="SignUp" component={SignUpScreen} />
+                <Stack.Screen name="SignIn" component={SignInScreen} />
+                <Stack.Screen name="SignUp" component={SignUpScreen} />
+                <Stack.Screen name="Classes" component={Classes} />
+
+
+
+
                 </Stack.Navigator>
             </NavigationContainer>
             );

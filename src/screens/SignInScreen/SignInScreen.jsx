@@ -8,7 +8,8 @@ import CustomButton from '../../components/CustomButton'
 import SignUpRequestButton from '../../components/SignUpRequestButton'
 import { useNavigation } from '@react-navigation/native';
 import SignUpScreen from "../SignUpScreen";
-import { Facebook, LoginManager, LoginButton, AccessToken, GraphRequest} from 'react-native-fbsdk';
+import Classes from "../ClassesOverview";
+import { Facebook, LoginManager, LoginButton, AccessToken, GraphRequest} from 'react-native-fbsdk-next';
 
 const SignInScreen = () => {
     const [username, setUsername] = useState('');
@@ -18,6 +19,13 @@ const SignInScreen = () => {
 
     const onSignInPressed = () => {
         console.warn("Sign in");
+        if((username == "admin") && (password == "stote123")){
+            alert("Welcome User");
+            navigation.navigate('Classes');
+        }
+        else{
+            alert("No sign in for you!");
+        }
     };
 
     const onForgotPasswordPressed = () => {
@@ -32,6 +40,7 @@ const SignInScreen = () => {
                 console.warn('Login cancelled');
               } else {
                 console.log('Logged in!');
+                navigation.navigate('Classes');
               }
             },
             error => {
