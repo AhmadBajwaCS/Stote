@@ -1,6 +1,5 @@
 import React, {useState} from 'react';
 import { TouchableOpacity, Keyboard, ScrollView, StyleSheet, Text, View, Alert } from 'react-native';
-import ClassAddButton from '../../components/ClassAddButton';
 import ClassComponent from '../../components/ClassComponent';
 
 const ClassesOverview = () => {
