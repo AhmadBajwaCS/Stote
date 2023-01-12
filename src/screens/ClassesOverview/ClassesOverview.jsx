@@ -1,5 +1,5 @@
 import React, {useState} from 'react';
-import { TouchableOpacity, Modal, Keyboard, ScrollView, StyleSheet, Text, View, Alert } from 'react-native';
+import { TouchableOpacity, Modal, Keyboard, ScrollView, StyleSheet, Text, View, Alert, TouchableWithoutFeedback, Animated } from 'react-native';
 import ClassComponent from '../../components/ClassComponent';
 import CustomDialog from '../../components/CustomDialog';
 
@@ -7,14 +7,15 @@ const ClassesOverview = () => {
     const [classItem, setClassItem] = useState();
     const [classList, setClassList] = useState([]);
     const [isModalVisible, setIsModalVisible] = useState(false);
-    const handleAddClass = (userInput) => {
-        console.log(userInput);
-        //set text for new class button
-        setClassItem(userInput);
 
-        //create new class button
+    const handleAddClass = (userInput) => { //01/11/23 @deshpadmakumar
+        console.log(userInput);
+        if (userInput==""){
+            userInput = "New Class"
+        }
+        /*Set text for new class button. Create new class button with setState forwarded. Set Modal to invisible again.*/
+        setClassItem(userInput);
         setClassList(prevState => [...prevState, userInput])
-        //setClassItem(null);
         setIsModalVisible(false);
         if (classList.length > 3) { //for coding purposes max length of class list is 4
             setClassList([])
@@ -30,7 +31,7 @@ const ClassesOverview = () => {
                     }
                 </View>
             </View>
-            <View>
+            <View style={styles.modal}>
                 <CustomDialog
                     isModalVisible={isModalVisible}
                     setIsModalVisible={setIsModalVisible}
@@ -52,6 +53,13 @@ const ClassesOverview = () => {
 const styles = StyleSheet.create({
     wrapper:{
         flex: 1,
+    },
+    modal:{
+        flex: 1,
+        justifyContent: 'center',
+        top: 100,
+
+
     },
     lowerwrapper:{
         position: 'absolute',
