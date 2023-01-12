@@ -2,6 +2,7 @@ import React, {useState} from 'react';
 import { TouchableOpacity, Modal, Keyboard, ScrollView, StyleSheet, Text, View, Alert, TouchableWithoutFeedback, Animated } from 'react-native';
 import ClassComponent from '../../components/ClassComponent';
 import CustomDialog from '../../components/CustomDialog';
+import CustomButton from "../../components/CustomButton";
 
 
 const ClassesOverview = () => {
@@ -28,24 +29,32 @@ const ClassesOverview = () => {
 
 
     const generateColor = () => {
-        const colorChoices = ["#C1FFB7", "#C7FBFF", "#FFE0CE", "#FFEEB4", "#C7D6FF", "#D9C7FF", "#EDC7FF" ]
+
+        const colorChoices = ["#C1FFB7", "#C7FBFF", "#FFE0CE", "#FFEEB4", "#C7D6FF", "#D9C7FF", "#EDC7FF" ]// Here are some potential colors
+        const uniColors = colorChoices.filter(x => classColors.indexOf(x) == -1); // uniColors is an array of the colors that haven't been used already with other classes
+
 
         console.log("\n colorChoices: " + colorChoices)
         console.log("classColors: " + classColors)
-        const uniColors = colorChoices.filter(x => classColors.indexOf(x) == -1);
         console.log("uniColors: " + uniColors + " \n ")
-        const randomNum = Math.floor(Math.random() * (uniColors.length))
 
-        const randomColor = Math.floor(Math.random() * 16777215)
-            .toString(16)
-            .padStart(6, '0');
+        const randomNum = Math.floor(Math.random() * (uniColors.length))  // get a random color from uniColors array
+
+        //this is for getting a completely random color
+        //const randomColor = Math.floor(Math.random() * 16777215)
+            //.toString(16)
+            //.padStart(6, '0');
 
         return uniColors[randomNum];
-        // return `#${randomColor}`;
+        //return `#${randomColor}`;   this is for getting a completely random color
     };
 
     return(
         <View style={styles.wrapper}>
+
+            <View style={{ padding:30, backgroundColor: "#35a5c4", marginBottom: 20, borderBottomLeftRadius: 20, borderBottomRightRadius: 20, elevation: 50, }}>
+                <Text style={{  textAlign: 'center', color: 'white', fontSize: 20 }}>This is a placeholder header</Text>
+            </View>
 
             <View style={styles.upperwrapper}>
                 <View>{

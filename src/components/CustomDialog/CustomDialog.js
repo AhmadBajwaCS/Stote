@@ -1,5 +1,5 @@
-import { Modal, StyleSheet, TextInput, View, Text, Button,TouchableOpacity, TouchableWithoutFeedback, Animated  } from 'react-native';
-import { useState } from 'react';
+import { Modal, StyleSheet, TextInput, View, Text, Button, TouchableOpacity, TouchableWithoutFeedback, Animated  } from 'react-native';
+import React, { useState } from 'react';
 import { withSafeAreaInsets } from 'react-native-safe-area-context';
 
 const CustomDialog = ({ isModalVisible, setIsModalVisible, onSubmit }) => {
@@ -12,8 +12,9 @@ const CustomDialog = ({ isModalVisible, setIsModalVisible, onSubmit }) => {
   return (
     <Modal visible={isModalVisible} style={styles.modal} transparent={true}>
       <View style={styles.dialog}>
+
         <Text style={{color : "white"}}>What would you like to name your class?</Text>
-        
+
         <TextInput
           style={styles.textInput}
           placeholder="Enter Class Name"
@@ -28,7 +29,9 @@ const CustomDialog = ({ isModalVisible, setIsModalVisible, onSubmit }) => {
     </Modal>
   );
 };
+
 const styles = StyleSheet.create({
+
     textInput:{
         marginVertical:20,
         height: 41,
@@ -38,15 +41,15 @@ const styles = StyleSheet.create({
         color: "black",
         backgroundColor: '#FFFFFF',
         fontSize:12,
-       
-        
+
     },
+
     submit:{
       backgroundColor: "#35A5C4",
       width: 290,
       maxWidth: 290,
       alignItems:'center',
-      borderRadius: 20,
+      borderRadius: 15,
     },
     submitText:{
       color: "white",
@@ -54,7 +57,7 @@ const styles = StyleSheet.create({
       fontSize: 24,
       paddingVertical: 5,
     },
-   
+
     dialog: {
         flex: 1,
         justifyContent:'center',
