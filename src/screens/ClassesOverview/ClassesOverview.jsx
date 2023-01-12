@@ -28,20 +28,23 @@ const ClassesOverview = () => {
 
 
     const generateColor = () => {
-        const colorChoices = ["#C7FBFF", "#FFE0CE", "#C1FFB7", "#FFEEB4", "#E1C8FF", "#53058d", "#E5141A" ]
+
+        const colorChoices = ["#C7FBFF", "#FFE0CE", "#C1FFB7", "#FFEEB4", "#E1C8FF", "#53058d", "#E5141A" ] // Here are some potential colors
+        const uniColors = colorChoices.filter(x => classColors.indexOf(x) == -1); // uniColors is an array of the colors that haven't been used already with other classes
 
         console.log("\n colorChoices: " + colorChoices)
         console.log("classColors: " + classColors)
-        const uniColors = colorChoices.filter(x => classColors.indexOf(x) == -1);
         console.log("uniColors: " + uniColors + " \n ")
-        const randomNum = Math.floor(Math.random() * (uniColors.length))
 
-        const randomColor = Math.floor(Math.random() * 16777215)
-            .toString(16)
-            .padStart(6, '0');
+        const randomNum = Math.floor(Math.random() * (uniColors.length))  // get a random color from uniColors array
+
+        //this is for getting a completely random color
+        //const randomColor = Math.floor(Math.random() * 16777215)
+            //.toString(16)
+            //.padStart(6, '0');
 
         return uniColors[randomNum];
-        // return `#${randomColor}`;
+        //return `#${randomColor}`;   this is for getting a completely random color
     };
 
     return(

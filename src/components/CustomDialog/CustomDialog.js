@@ -23,6 +23,7 @@ const CustomDialog = ({ isModalVisible, setIsModalVisible, onSubmit }) => {
     </Modal>
   );
 };
+
 const styles = StyleSheet.create({
     textInput:{
         marginVertical:20,
