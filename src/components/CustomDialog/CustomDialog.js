@@ -38,7 +38,7 @@ const styles = StyleSheet.create({
         backgroundColor: 'red',
     },
     dialog: {
-        backgroundColor: '#A9CCC5',
+        backgroundColor: '#ffffff',
         width: '80%',
         top: 200,
         position: 'absolute',
