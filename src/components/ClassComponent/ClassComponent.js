@@ -1,20 +1,18 @@
 import React from 'react';
 import { StyleSheet, Text, View, TouchableOpacity, } from "react-native";
 import { MaterialIcons } from '@expo/vector-icons';
-import getRandomColor from '../RandomColorGenerator/RandomColorGenerator';
-getRandomColor
 
-
+const color = ['#282828', '#C1FFB7', '#C7FBFF', '#FFE0CE', '#FFEEB4'];
 
 
 const ClassComponent = (props) => {
-    getRandomColor()
     return(
         <View style={styles.item}>
             <TouchableOpacity style={styles.button}>
                 <Text style={styles.itemText}>{props.text}</Text>
             </TouchableOpacity>
         </View>
+        
     )
     
 }
@@ -27,7 +25,7 @@ const styles = StyleSheet.create({
         margin: 10,
         alignItems: "center",
         borderRadius: 10,
-        backgroundColor: getRandomColor(),
+        backgroundColor: '#C7FBFF',
         flexDirection: 'row',
 
     },
