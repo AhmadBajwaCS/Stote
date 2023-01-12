@@ -1,6 +1,8 @@
 import React, {useState} from 'react';
 import { TouchableOpacity, Keyboard, ScrollView, StyleSheet, Text, View, Alert } from 'react-native';
 import ClassComponent from '../../components/ClassComponent';
+import RandomColorGenerator from '../../components/RandomColorGenerator';
+RandomColorGenerator
 
 const ClassesOverview = () => {
     const [classItem, setClass] = useState();
@@ -41,6 +43,8 @@ const ClassesOverview = () => {
 const styles = StyleSheet.create({
     wrapper:{
         flex: 1,
+        backgroundColor: '#222431',
+        
     },
     lowerwrapper:{
         position: 'absolute',
@@ -51,9 +55,9 @@ const styles = StyleSheet.create({
 
     },
     addbuttonwrapper:{
-        width: 60,
-        height: 60,
-        backgroundColor: '#A9CCC5',
+        width: 75,
+        height: 75,
+        backgroundColor: '#3D7DDF',
         borderRadius: 60,
         justifyContent: 'center',
         alignItems: 'center',
@@ -61,6 +65,7 @@ const styles = StyleSheet.create({
     plus:{
 
         fontSize: 40,
+        color: 'white'
         //fontWeight: 'bold',
     }
 });
