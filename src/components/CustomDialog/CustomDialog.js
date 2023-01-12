@@ -1,15 +1,14 @@
 import { Modal, StyleSheet, TextInput, View, Text, Button, TouchableWithoutFeedback, Animated  } from 'react-native';
 import { useState } from 'react';
 
-const CustomDialog = ({ isModalVisible, setIsModalVisible, onSubmit, setClassItem }) => {
+const CustomDialog = ({ isModalVisible, setIsModalVisible, onSubmit }) => {
   const [userInput, setUserInput] = useState('');
 
     const handleSubmit = () => {
-    setIsModalVisible(false);
-    setClassItem(userInput);
-    onSubmit(userInput);
-
+        setUserInput("") ;
     }
+
+
 
   return (
     <Modal visible={isModalVisible} style={styles.modal} transparent={true}>
@@ -21,7 +20,7 @@ const CustomDialog = ({ isModalVisible, setIsModalVisible, onSubmit, setClassIte
           onChangeText={text => setUserInput(text)}
           value={userInput}
         />
-        <Button title="Submit" onPress={()=>onSubmit(userInput)} style={styles.submit}  />
+        <Button title="Submit" onPress={()=> { handleSubmit(); onSubmit(userInput);}} style={styles.submit}  />
       </View>
     </Modal>
   );

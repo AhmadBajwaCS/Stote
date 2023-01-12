@@ -10,7 +10,6 @@ const ClassesOverview = () => {
     const [isModalVisible, setIsModalVisible] = useState(false);
 
     const handleAddClass = (userInput) => { //01/11/23 @deshpadmakumar
-        console.log(userInput);
         if (userInput==""){
             userInput = "New Class"
         }
@@ -24,6 +23,7 @@ const ClassesOverview = () => {
     }
     return(
         <View style={styles.wrapper}>
+
             <View style={styles.upperwrapper}>
                 <View>{
                     classList.map((item, index) => {
@@ -32,22 +32,24 @@ const ClassesOverview = () => {
                     }
                 </View>
             </View>
+
             <View style={styles.modal}>
                 <CustomDialog
                     isModalVisible={isModalVisible}
                     setIsModalVisible={setIsModalVisible}
-                    setClassItem={setClassItem}
+                    //setClassItem={setClassItem}
                     onSubmit={handleAddClass}
                 />
             </View>
-            <View style={styles.lowerwrapper}>
 
+            <View style={styles.lowerwrapper}>
                 <TouchableOpacity onPress={() => setIsModalVisible(true)}>
                     <View style={styles.addbuttonwrapper}>
                         <Text style={styles.plus}>+</Text>
                     </View>
                 </TouchableOpacity>
             </View>
+
         </View>
     )}
 
