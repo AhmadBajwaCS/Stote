@@ -3,6 +3,7 @@ import { TouchableOpacity, Modal, Keyboard, ScrollView, StyleSheet, Text, View, 
 import ClassComponent from '../../components/ClassComponent';
 import CustomDialog from '../../components/CustomDialog';
 
+
 const ClassesOverview = () => {
     const [classItem, setClassItem] = useState();
     const [classList, setClassList] = useState([]);
@@ -53,6 +54,8 @@ const ClassesOverview = () => {
 const styles = StyleSheet.create({
     wrapper:{
         flex: 1,
+        backgroundColor: '#222431',
+        
     },
     modal:{
         flex: 1,
@@ -70,9 +73,9 @@ const styles = StyleSheet.create({
 
     },
     addbuttonwrapper:{
-        width: 60,
-        height: 60,
-        backgroundColor: '#A9CCC5',
+        width: 75,
+        height: 75,
+        backgroundColor: '#3D7DDF',
         borderRadius: 60,
         justifyContent: 'center',
         alignItems: 'center',
@@ -80,6 +83,7 @@ const styles = StyleSheet.create({
     plus:{
 
         fontSize: 40,
+        color: 'white'
         //fontWeight: 'bold',
     }
 });
