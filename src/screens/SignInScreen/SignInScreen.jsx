@@ -8,6 +8,7 @@ import CustomButton from '../../components/CustomButton'
 import SignUpRequestButton from '../../components/SignUpRequestButton'
 import { useNavigation } from '@react-navigation/native';
 import SignUpScreen from "../SignUpScreen";
+import ForgotPassword from "../ForgotPassword";
 import Classes from "../ClassesOverview";
 import { Facebook, LoginManager, LoginButton, AccessToken, GraphRequest} from 'react-native-fbsdk-next';
 

@@ -1,28 +1,36 @@
-import React from 'react';
+import React, {useState, useEffect} from 'react';
 import { StyleSheet, Text, View, TouchableOpacity, } from "react-native";
 import { MaterialIcons } from '@expo/vector-icons';
 
 const ClassComponent = (props) => {
+    const [style, setStyle] = useState(styles);
+
+    useEffect(() => {
+            setStyle({
+                ...style,
+                item: {
+                    paddingVertical:30,
+                    paddingLeft:20,
+                    justifyContent: 'space-between',
+                    margin: 10,
+                    alignItems: "center",
+                    borderRadius: 10,
+                    flexDirection: 'row',
+                    backgroundColor: props.color,
+                },
+            });
+        }, [props.color]);
+
     return(
-        <View style={styles.item}>
+        <View style={style.item}>
             <TouchableOpacity style={styles.button}>
-                <Text style={styles.itemText}>{props.text}</Text>
+                <Text style={style.itemText}>{props.text}</Text>
             </TouchableOpacity>
         </View>
     )
 }
 
 const styles = StyleSheet.create({
-    
-    item:{
-        padding:25,
-        justifyContent: 'space-between',
-        margin: 10,
-        alignItems: "center",
-        borderRadius: 10,
-        backgroundColor: '#C7FBFF',
-        flexDirection: 'row',
-    },
 
     itemText:{
         maxWidth: 80,
