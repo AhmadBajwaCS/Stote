@@ -30,8 +30,9 @@ const ClassesOverview = () => {
 
     const generateColor = () => {
 
-        const colorChoices = ["#C7FBFF", "#FFE0CE", "#C1FFB7", "#FFEEB4", "#E1C8FF", "#53058d", "#E5141A" ] // Here are some potential colors
+        const colorChoices = ["#C1FFB7", "#C7FBFF", "#FFE0CE", "#FFEEB4", "#C7D6FF", "#D9C7FF", "#EDC7FF" ]// Here are some potential colors
         const uniColors = colorChoices.filter(x => classColors.indexOf(x) == -1); // uniColors is an array of the colors that haven't been used already with other classes
+
 
         console.log("\n colorChoices: " + colorChoices)
         console.log("classColors: " + classColors)
