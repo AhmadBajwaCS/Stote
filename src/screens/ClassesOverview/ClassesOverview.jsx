@@ -1,11 +1,10 @@
-import React, {useState} from 'react';
+import React, {useState, useEffect} from 'react';
 import { TouchableOpacity, Modal, Keyboard, ScrollView, StyleSheet, Text, View, Alert, TouchableWithoutFeedback, Animated } from 'react-native';
 import ClassComponent from '../../components/ClassComponent';
 import CustomDialog from '../../components/CustomDialog';
 
 
 const ClassesOverview = () => {
-    const [classItem, setClassItem] = useState();
     const [classList, setClassList] = useState([]);
     const [isModalVisible, setIsModalVisible] = useState(false);
 
@@ -14,20 +13,21 @@ const ClassesOverview = () => {
             userInput = "New Class"
         }
         /*Set text for new class button. Create new class button with setState forwarded. Set Modal to invisible again.*/
-        setClassItem(userInput);
-        setClassList(prevState => [...prevState, userInput])
+        setClassList(prevState => [...prevState, {name: userInput, color: '#acd65e'}])
         setIsModalVisible(false);
         if (classList.length > 3) { //for coding purposes max length of class list is 4
             setClassList([])
         }
+
     }
+
     return(
         <View style={styles.wrapper}>
 
             <View style={styles.upperwrapper}>
                 <View>{
                     classList.map((item, index) => {
-                      return <ClassComponent key={index} text={item}/>
+                      return <ClassComponent key={index} text={item.name} color={item.color}/>
                     })
                     }
                 </View>

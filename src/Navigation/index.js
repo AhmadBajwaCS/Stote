@@ -5,6 +5,7 @@ import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import SignInScreen from '../screens/SignInScreen';
 import SignUpScreen from '../screens/SignUpScreen';
 import Classes from '../screens/ClassesOverview';
+import ForgotPassword from '../screens/ForgotPassword';
 
 
 const Stack = createNativeStackNavigator();
@@ -16,6 +17,7 @@ const Navigation = () => {
                     //ardStyle: { backgroundColor: '#1b1c29' },
                 }}>
 
+                <Stack.Screen name="ForgotPassword" component={SignInScreen} />
                 <Stack.Screen name="SignIn" component={SignInScreen} />
                 <Stack.Screen name="SignUp" component={SignUpScreen} />
                 <Stack.Screen name="Classes" component={Classes} />
