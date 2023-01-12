@@ -14,14 +14,11 @@ const Navigation = () => {
                 <Stack.Navigator screenOptions = {{
                     headerShown:false,
                     //ardStyle: { backgroundColor: '#1b1c29' },
-                }}
-                >
+                }}>
+
                 <Stack.Screen name="SignIn" component={SignInScreen} />
                 <Stack.Screen name="SignUp" component={SignUpScreen} />
                 <Stack.Screen name="Classes" component={Classes} />
-
-
-
 
                 </Stack.Navigator>
             </NavigationContainer>

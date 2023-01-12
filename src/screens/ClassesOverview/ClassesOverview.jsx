@@ -1,42 +1,53 @@
 import React, {useState} from 'react';
-import { TouchableOpacity, Keyboard, ScrollView, StyleSheet, Text, View, Alert } from 'react-native';
+import { TouchableOpacity, Modal, Keyboard, ScrollView, StyleSheet, Text, View, Alert } from 'react-native';
 import ClassComponent from '../../components/ClassComponent';
+import CustomDialog from '../../components/CustomDialog';
 
 const ClassesOverview = () => {
-    const [classItem, setClass] = useState();
+    const [classItem, setClassItem] = useState();
     const [classList, setClassList] = useState([]);
-    const handleAddClass = () => {
-        setClassList([...classList, classItem])
+    const [isModalVisible, setIsModalVisible] = useState(false);
+    const handleAddClass = (userInput) => {
+        console.log(userInput);
+        //set text for new class button
+        setClassItem(userInput);
+
+        //create new class button
+        setClassList(prevState => [...prevState, userInput])
+        //setClassItem(null);
+        setIsModalVisible(false);
         if (classList.length > 3) { //for coding purposes max length of class list is 4
             setClassList([])
         }
     }
-    const classInfo = () => {
-        console.log("alert");
-        Alert.prompt('Please Enter Class Name','', ({text}) => {handleAddClass(text)}, 'Class', ['Submit', 'Cancel']);
-    }
     return(
         <View style={styles.wrapper}>
             <View style={styles.upperwrapper}>
-                <View>
-                    {
-                    classList.map((item) => {
-                      return <ClassComponent />
-                      return <ClassComponent />
+                <View>{
+                    classList.map((item, index) => {
+                      return <ClassComponent key={index} text={item}/>
                     })
                     }
                 </View>
             </View>
+            <View>
+                <CustomDialog
+                    isModalVisible={isModalVisible}
+                    setIsModalVisible={setIsModalVisible}
+                    setClassItem={setClassItem}
+                    onSubmit={handleAddClass}
+                />
+            </View>
             <View style={styles.lowerwrapper}>
-                <TouchableOpacity onPress={handleAddClass}>
+
+                <TouchableOpacity onPress={() => setIsModalVisible(true)}>
                     <View style={styles.addbuttonwrapper}>
                         <Text style={styles.plus}>+</Text>
                     </View>
                 </TouchableOpacity>
             </View>
         </View>
-    )
-    }
+    )}
 
 const styles = StyleSheet.create({
     wrapper:{
