@@ -4,11 +4,9 @@ import { useState } from 'react';
 const CustomDialog = ({ isModalVisible, setIsModalVisible, onSubmit }) => {
   const [userInput, setUserInput] = useState('');
 
-    const handleSubmit = () => {
+    const handleSubmit = () => { //01/12/23 @deshpadmakumar
         setUserInput("") ;
     }
-
-
 
   return (
     <Modal visible={isModalVisible} style={styles.modal} transparent={true}>
