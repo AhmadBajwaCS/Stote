@@ -2,6 +2,7 @@ import React, {useState} from 'react';
 import { TouchableOpacity, Modal, Keyboard, ScrollView, StyleSheet, Text, View, Alert, TouchableWithoutFeedback, Animated } from 'react-native';
 import ClassComponent from '../../components/ClassComponent';
 import CustomDialog from '../../components/CustomDialog';
+import CustomButton from "../../components/CustomButton";
 
 
 const ClassesOverview = () => {
@@ -49,6 +50,10 @@ const ClassesOverview = () => {
 
     return(
         <View style={styles.wrapper}>
+
+            <View style={{ padding:30, backgroundColor: "#35a5c4", marginBottom: 20, borderBottomLeftRadius: 20, borderBottomRightRadius: 20, elevation: 50, }}>
+                <Text style={{  textAlign: 'center', color: 'white', fontSize: 20 }}>This is a placeholder header</Text>
+            </View>
 
             <View style={styles.upperwrapper}>
                 <View>{
