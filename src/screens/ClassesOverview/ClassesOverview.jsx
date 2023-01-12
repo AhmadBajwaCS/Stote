@@ -28,7 +28,7 @@ const ClassesOverview = () => {
 
 
     const generateColor = () => {
-        const colorChoices = ["#C7FBFF", "#FFE0CE", "#C1FFB7", "#FFEEB4", "#E1C8FF", "#53058d", "#E5141A" ]
+        const colorChoices = ["#C1FFB7", "#C7FBFF", "#FFE0CE", "#FFEEB4", "#C7D6FF", "#D9C7FF", "#EDC7FF" ]
 
         console.log("\n colorChoices: " + colorChoices)
         console.log("classColors: " + classColors)
