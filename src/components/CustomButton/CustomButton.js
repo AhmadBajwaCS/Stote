@@ -2,15 +2,10 @@ import React from 'react';
 import { TouchableWithoutFeedback, TouchableOpacity, View, Text, TextInput, StyleSheet, Pressable, Image} from 'react-native';
 
 
-const CustomButton = ({username, password, confpassword, onPress, text, type="PRI", bgColor, fgColor, width, source}) => {
-
-    /*const login = () => {
-        if((username == "admin") && (password == "stote123")){
-            return alert("Welcome User")
-        }
-    }*/
+const CustomButton = ({confpassword, onPress, text, type="PRI", bgColor, fgColor, width, source}) => {
 
     if (text != null){
+
         return (
 
             <TouchableOpacity onPress={onPress} style = {[
@@ -19,19 +14,18 @@ const CustomButton = ({username, password, confpassword, onPress, text, type="PR
                 bgColor ? {backgroundColor: bgColor} : {},
 
             ]}>
-
                 <Text style={[
                     styles.text,
                     styles[`text_${type}`],
                 ]}>
-
                     {text}
                 </Text>
             </TouchableOpacity>
 
         );
-        }
+    }
     else{
+
         return (
 
             <TouchableOpacity  onPress={onPress} style = {[
