@@ -33,6 +33,7 @@ const SignInScreen = () => {
     // This function runs when 'forgot password?' is pressed
     const onForgotPasswordPressed = () => {
         console.warn("Forgot Password");
+        navigation.navigate('ForgotPassword');
     };
 
     // This function runs when the facebook icon is pressed.
@@ -106,9 +107,7 @@ const SignInScreen = () => {
 
             <CustomButton   // Sign in button
                 text = "Sign in"
-                onPress={onSignInPressed}
-                username = {username}
-                password = {password}
+                onPress = { onSignInPressed }
             />
 
             <Text style={{ color:"white", padding: 5 }}>

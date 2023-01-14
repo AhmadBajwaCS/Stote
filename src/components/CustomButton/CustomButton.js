@@ -2,9 +2,10 @@ import React from 'react';
 import { TouchableWithoutFeedback, TouchableOpacity, View, Text, TextInput, StyleSheet, Pressable, Image} from 'react-native';
 
 // The custom button is our main use for buttons. We have different props that style different types of buttons as well.
-const CustomButton = ({username, password, confpassword, onPress, text, type="PRI", bgColor, fgColor, width, source}) => {
+const CustomButton = ({confpassword, onPress, text, type="PRI", bgColor, fgColor, width, source}) => {
 
     if (text != null){  // this is a placeholder, we need to change this. right now, any button without a text will print a source image.
+
         return (
 
             <TouchableOpacity onPress={onPress} style = {[  // an array of styles is being passed here
@@ -13,19 +14,18 @@ const CustomButton = ({username, password, confpassword, onPress, text, type="PR
                 bgColor ? {backgroundColor: bgColor} : {}, // If a bgColor is passed as a prop, this overrides the bgColor that the style has taken in before.
 
             ]}>
-
                 <Text style={[
                     styles.text,
                     styles[`text_${type}`],
                 ]}>
-
                     {text}
                 </Text>
             </TouchableOpacity>
 
         );
-        }
+    }
     else{
+
         return (
 
             <TouchableOpacity  onPress={onPress} style = {[
