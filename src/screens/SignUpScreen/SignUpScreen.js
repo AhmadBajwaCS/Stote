@@ -8,6 +8,7 @@ import SignUpCreateButton from '../../components/SignUpCreateButton'
 import { useNavigation } from '@react-navigation/native';
 
 const SignUpScreen = () => {
+
     const [email, setEmail] = useState('');
     const [newPassword, setPassword] = useState('');
     const [confirmPassword, setConfirmPassword] = useState('');
@@ -43,30 +44,34 @@ const SignUpScreen = () => {
         <View style = {styles.root}>
 
 
-            <Image
+            <Image  // Displays the logo
                 source={Logo}
                 style ={ [styles.logo, {height: height * 0.3 }] }
                 resizeMode = "contain"
             />
 
             <Text style={{ color:"white", padding: 5, width: "100%" }}>Email:</Text>
+
             <CustomInput
                 placeholder="email"
                 value = {email}
                 setValue={setEmail}
+
                 margVer={4}
             />
 
             <Text style={{ color:"white", padding: 5, width: "100%" }}>New Password:</Text>
-            <CustomInput
+            <CustomInput     // Password input box
                 placeholder="Password"
                 value = {newPassword}
                 setValue= {setPassword}
                 secureTextEntry={true}
                 margVer={4}
             />
+
             <Text style={{ color:"white", padding: 5, width: "100%" }}>Confirm Password:</Text>
-            <CustomInput
+
+            <CustomInput     // Confirm password input box
                 placeholder="Confirm Password"
                 value = {confirmPassword}
                 setValue={setConfirmPassword}
@@ -74,7 +79,7 @@ const SignUpScreen = () => {
                 margVer={4}
             />
 
-            <CustomButton
+            <CustomButton    // Sign up button
                 text = "Sign up"
                 onPress={onCreateAccountPressed}
                 username = {email}
@@ -94,6 +99,7 @@ const styles = StyleSheet.create({
        padding: 20,
        backgroundColor: '#222431'
    },
+
     logo: {
         width: '70%',
         maxWidth: 300,

@@ -1,8 +1,9 @@
 import React from 'react';
 import { View, Text, TextInput, StyleSheet} from 'react-native';
 
+// The custom input is our main use for text input boxes. It takes in props for blues, if the text should be hidden, and the vertical margin
+const CustomInput = ({value, setValue, placeholder, secureTextEntry, margVer}) => {
 
-const CustomInput = ({value, setValue, placeholder, secureTextEntry, margVer, keyboardType}) => {
 
     return (
         <View style = {[styles.container, margVer ? {marginVertical: margVer} : {},]} >
@@ -10,7 +11,7 @@ const CustomInput = ({value, setValue, placeholder, secureTextEntry, margVer, ke
                 value={value}
                 keyboardType={keyboardType}
                 onChangeText={setValue}
-                placeholder={placeholder}
+                placeholder={placeholder}   // the greyed out text that it displays when nothing is written
                 style={styles.input}
                 SecureTextEntry={secureTextEntry}
             />
@@ -19,6 +20,7 @@ const CustomInput = ({value, setValue, placeholder, secureTextEntry, margVer, ke
 };
 
 const styles = StyleSheet.create({
+
     container: {
         backgroundColor: 'white',
         width: '100%',
@@ -31,7 +33,9 @@ const styles = StyleSheet.create({
         marginVertical: 5,
 
     },
+
     input: {},
+
 });
 
 export default CustomInput;
