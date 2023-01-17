@@ -16,9 +16,9 @@ const Navigation = () => {
                     headerShown:false,
                     //ardStyle: { backgroundColor: '#1b1c29' },
                 }}>
-
-                <Stack.Screen name="ForgotPassword" component={SignInScreen} />
                 <Stack.Screen name="SignIn" component={SignInScreen} />
+                <Stack.Screen name="ForgotPassword" component={SignInScreen} />
+
                 <Stack.Screen name="SignUp" component={SignUpScreen} />
                 <Stack.Screen name="Classes" component={Classes} />
 
