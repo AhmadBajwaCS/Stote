@@ -3,15 +3,13 @@ import { StyleSheet, Text, View } from "react-native";
 
 /* (Delete this comment when working on page)
     Framework only - needs to be worked on
-        + Show recording in progress
-        + Ability to pause recording
-        + Ability to stop recording
+        + Display categories: notes, messages, thoughts, audio, schedule event
 */
-const RecordingScreen = () => {
+const ClassScreen = () => {
 };
 
     const styles = StyleSheet.create({
 
 });
 
-export default RecordingScreen;
+export default ClassScreen;
