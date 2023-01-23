@@ -2,7 +2,7 @@ import React from 'react';
 import { View, Text, TextInput, StyleSheet} from 'react-native';
 
 // The custom input is our main use for text input boxes. It takes in props for blues, if the text should be hidden, and the vertical margin
-const CustomInput = ({value, setValue, placeholder, secureTextEntry, margVer}) => {
+const CustomInput = ({value, setValue, placeholder, keyboardType, secureTextEntry, margVer}) => {
 
 
     return (

@@ -1,6 +1,6 @@
 import React, {useState} from 'react'
 import { View, Text, Image, StyleSheet, useWindowDimensions } from 'react-native'
-import Logo from '../../../assets/images/StoteLogo.png'
+import Logo from '../../../assets/images/StoteLogo_v2.png'
 import FBLogo from '../../../assets/images/facebookLogo.png'
 import GLogo from '../../../assets/images/google.png'
 import CustomInput from '../../components/CustomInput'

@@ -41,7 +41,6 @@ const styles = StyleSheet.create({
         color: "black",
         backgroundColor: '#FFFFFF',
         fontSize:12,
-
     },
 
     submit:{
@@ -51,6 +50,7 @@ const styles = StyleSheet.create({
       alignItems:'center',
       borderRadius: 15,
     },
+
     submitText:{
       color: "white",
       fontWeight: 'bold',
@@ -73,7 +73,6 @@ const styles = StyleSheet.create({
         paddingVertical: 20,
         paddingHorizontal: 10,
         //marginVertical: 5,
-
     },
 
  });
