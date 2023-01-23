@@ -5,11 +5,11 @@ import { StyleSheet, Text, View } from "react-native";
     Framework only - needs to be worked on
         + Display categories: notes, messages, thoughts, audio, schedule event
 */
-const ClassScreen = () => {
+const ClassHomeScreen = () => {
 };
 
     const styles = StyleSheet.create({
 
 });
 
-export default ClassScreen;
+export default ClassHomeScreen;
