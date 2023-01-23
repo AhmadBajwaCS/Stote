@@ -7,7 +7,13 @@ import SignUpScreen from '../screens/SignUpScreen';
 import Classes from '../screens/ClassesOverview';
 import ForgotPassword from '../screens/ForgotPassword';
 import ChangePassword from '../screens/ChangePassword';
-
+import AudioOverview from '../screens/AudioOverview';
+import ClassHomeScreen from '../screens/ClassHomeScreen';
+import CreateScheduleScreen from '../screens/CreateScheduleScreen';
+import EditProfileScreen from '../screens/EditProfileScreen';
+import NotesOverview from '../screens/NotesOverview';
+import RecordingScreen from '../screens/RecordingScreen';
+import ScheduleScreen from '../screens/ScheduleScreen';
 
 const Stack = createNativeStackNavigator();
 const Navigation = () => {
@@ -23,6 +29,13 @@ const Navigation = () => {
                 <Stack.Screen name="ChangePassword" component={ChangePassword} />
                 <Stack.Screen name="SignUp" component={SignUpScreen} />
                 <Stack.Screen name="Classes" component={Classes} />
+                <Stack.Screen name="AudioOverview" component={AudioOverview} />
+                <Stack.Screen name="ClassHomeScreen" component={ClassHomeScreen} />
+                <Stack.Screen name="CreateScheduleScreen" component={CreateScheduleScreen} />
+                <Stack.Screen name="EditProfileScreen" component={EditProfileScreen} />
+                <Stack.Screen name="NotesOverview" component={NotesOverview} />
+                <Stack.Screen name="RecordingScreen" component={RecordingScreen} />
+                <Stack.Screen name="ScheduleScreen" component={ScheduleScreen} />
 
                 </Stack.Navigator>
             </NavigationContainer>
