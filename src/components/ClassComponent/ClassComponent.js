@@ -10,9 +10,9 @@ const ClassComponent = ({key, text, classColor}) => {
                 styles.item,
                 classColor ? {backgroundColor: classColor} : {},
             ]}>
-                <TouchableOpacity style= {[styles.button,]} >
+                <View style= {[styles.button,]} >
                     <Text style={styles.itemText}>{text}</Text>
-                </TouchableOpacity>
+                </View>
             </View>
     )
 }

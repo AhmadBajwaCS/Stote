@@ -3,6 +3,7 @@ import { TouchableOpacity, Modal, Keyboard, ScrollView, StyleSheet, Text, View, 
 import ClassComponent from '../../components/ClassComponent';
 import CustomDialog from '../../components/CustomDialog';
 import CustomButton from "../../components/CustomButton";
+import { useNavigation } from '@react-navigation/native';
 
 
 const ClassesOverview = () => {
@@ -10,6 +11,7 @@ const ClassesOverview = () => {
     const [classColors, setClassColors] = useState([]);
     const [classList, setClassList] = useState([]);
     const [isModalVisible, setIsModalVisible] = useState(false);
+    const navigation = useNavigation();
 
     const handleAddClass = (userInput) => { //01/11/23 @deshpadmakumar
         if (userInput==""){
@@ -49,6 +51,14 @@ const ClassesOverview = () => {
         //return `#${randomColor}`;   this is for getting a completely random color
     };
 
+    const clickOnClass = (index) => {
+        console.log(classList[index])
+        navigation.navigate("ClassHomeScreen",
+        {name: classList[index]});
+
+
+    };
+
     return(
         <View style={styles.wrapper}>
 
@@ -57,12 +67,21 @@ const ClassesOverview = () => {
             </View>
 
             <View style={styles.upperwrapper}>
-                <View>{
-                    classList.map((item, index) => {
-                      return <ClassComponent key={index} text={item} classColor={classColors[index]}/>
-                    })
-                    }
-                </View>
+{/*                 <TouchableOpacity onPress ={(clickOnClass)}> */}
+                    <View>{
+
+                        classList.map((item, index) => {
+                          return(
+                            <TouchableOpacity key = {index} onPress ={() => clickOnClass(index)}>
+                                <ClassComponent key={index} text={item} classColor={classColors[index]} />
+                            </TouchableOpacity>
+                            )
+//                           <ClassComponent key={index} text={item} classColor={classColors[index]} />
+
+                        })
+                        }
+                    </View>
+{/*                 </TouchableOpacity> */}
             </View>
 
             <View style={styles.modal}>
